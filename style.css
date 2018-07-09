@@ -1,0 +1,276 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.spacecraft, .boundary {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+}
+
+.planet-wrap {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-60%);
+}
+
+.planet, .planetary-moon {
+    border-radius: 50%;
+}
+
+.planetary-moon {
+    position: absolute;
+    bottom: 50%;
+}
+
+.planetary-system {
+    position: relative;
+    transform-origin: 50% 50% 0px;
+}
+
+.label {
+    position: absolute;
+    border-left: 1px solid white;
+    margin-top: 10px;
+}
+
+.moon-label {
+    top: -218px;
+    width: 500px;
+}
+
+.moon-name {
+    padding-bottom: 130px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    font-size: 60px;
+    color: white;
+}
+
+.planet-name {
+    color: white;
+    margin-bottom: 0;
+    padding-top: 60px;
+    padding-left: 10px;
+    font-size: 60px;
+}
+
+/* Sun */
+#sun .planet {
+    height: 400px;
+    width: 400px;
+    background-color: yellow;
+}
+
+/* Mercury */
+#mercury {
+    left: 16668.6px;
+}
+
+#mercury .planet {
+    height: 1.4px;
+    width: 1.4px;
+    background-color: white;
+}
+
+/* Venus */
+#venus {
+    left: 31143.86px;
+}
+
+#venus .planet {
+    height: 3.5px;
+    width: 3.5px;
+    background-color: gold;
+}
+
+/* Earth */
+#earth {
+    left: 43060.3px;
+}
+
+#earth .planet {
+    height: 3.6px;
+    width: 3.6px;
+    background-color: #7cc6df;
+}
+
+#the-moon {
+    height: 1px;
+    width: 1px;
+    background-color: white;
+    left: 110.6px;
+}
+
+/* Mars */
+#mars {
+    left: 65597.8px;
+}
+
+#mars .planet {
+    height: 1.9px;
+    width: 1.9px;
+    background-color: #ff1818;
+}
+
+/* Jupiter */
+#jupiter {
+    left: 224080px;
+}
+
+#jupiter .planet {
+    height: 40.2px;
+    width: 40.2px;
+    background-color: #e6d3ac;
+}
+
+#io {
+    height: 1px;
+    width: 1px;
+    background-color: #ffff91;
+    left: 121.5px;
+}
+
+#callisto {
+    height: 1.4px;
+    width: 1.4px;
+    background-color: #dbcfc4;
+    left: 542px;
+}
+
+#ganymede {
+    height: 1.5px;
+    width: 1.5px;
+    background-color: #e0c1ac;
+    left: 308px;
+}
+
+#europa {
+    height: 0.9px;
+    width: 0.9px;
+    background-color: #dbba94;
+    left: 193px;
+}
+
+/* Saturn */
+#saturn {
+    left: 412469px;
+}
+
+#saturn .planetary-system {
+    transform: rotate(-26.7deg);
+}
+
+#saturn .planet {
+    height: 33.5px;
+    width: 33.5px;
+    background-color: #eec269;
+}
+
+#saturn-rings {
+    position: absolute;
+    top: 50%;
+    left: -23px;
+    height: 1px;
+    width: 78.7px;
+    background-color: #c0b8b8;
+}
+
+#titan {
+    height: 0.7px;
+    width: 0.7px;
+    background-color: #efd95b;
+    left: 351.7px;
+    transform: rotate(26.7deg);
+}
+
+/* Uranus */
+#uranus {
+    left: 826377px;
+}
+
+#uranus .planetary-system {
+    transform: rotate(-98deg);
+}
+
+#uranus .planet {
+    height: 14.6px;
+    width: 14.6px;
+    background-color: #69e9ee;
+}
+
+#titania {
+    height: 1px;
+    width: 1px;
+    background-color: #ffffff;
+    left: 125px;
+    transform: rotate(98deg);
+}
+
+/* Neptune */
+#neptune {
+    left: 1293823px;
+}
+
+#neptune .planetary-system {
+    transform: rotate(-28deg);
+}
+
+#neptune .planet {
+    height: 14.2px;
+    width: 14.2px;
+    background-color: #69b9ee;
+}
+
+#triton {
+    height: 0.8px;
+    width: 0.8px;
+    background-color: #ffffff;
+    left: 99.5px;
+    transform: rotate(28deg);
+}
+
+/* Pluto */
+#pluto {
+    left: 1700068px;
+}
+
+#pluto .planet {
+    height: 1px;
+    width: 1px;
+    background-color: #ecc6bc;
+}
+
+#charon {
+    height: 0.3px;
+    width: 0.3px;
+    background-color: #ecc6bc;
+    left: 5.7px;
+}
+
+/* Eris */
+#eris {
+    left: 4138647px;
+}
+
+#eris .planet {
+    height: 1px;
+    width: 1px;
+    background-color: #eceef1;
+}
+
+
+
+/* Sedna */
+#sedna {
+    left: 3662060px;
+}
+
+#sedna .planet {
+    height: 1px;
+    width: 1px;
+    background-color: #e2d7d7;
+}
