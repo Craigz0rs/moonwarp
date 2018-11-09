@@ -8,6 +8,171 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <nav class="navigation">
+    <ul class="planet-nav">
+      <li><a href="#sun">SUN</a></li>
+      <li><a href="#mercury">MERCURY</a></li>
+      <li><a href="#venus">VENUS</a></li>
+      <li><a href="#earth">EARTH</a></li>
+      <li><a href="#mars">MARS</a></li>
+      <li><a href="#jupiter">JUPITER</a></li>
+      <li><a href="#saturn">SATURN</a></li>
+      <li><a href="#uranus">URANUS</a></li>
+      <li><a href="#neptune">NEPTUNE</a></li>
+      <li><a href="#termination-shock">TERMINATION SHOCK</a></li>
+    </ul>
+    <ul class="dwarf-nav">
+      <li><a href="#ceres">CERES</a></li>
+      <li><a href="#pluto">PLUTO</a></li>
+      <li><a href="#makemake">MAKEMAKE</a></li>
+      <li><a href="#sedna">SEDNA</a></li>
+      <li><a href="#eris">ERIS</a></li>
+    </ul>
+    <ul class="probe-nav">
+      <li><a href="#new-horizons">NEW HORIZONS</a></li>
+      <li><a href="#pioneer11">PIONEER 11</a></li>
+      <li><a href="#voyager2">VOYAGER 2</a></li>
+      <li><a href="#pioneer10">PIONEER 10</a></li>
+      <li><a href="#voyager1">VOYAGER 1</a></li>
+    </ul>
+    <ul class="light-nav">
+      <li><a href="#oneLSec">1 Light-Second</a></li>
+      <li><a href="#oneLMin">1 Light-Minute</a></li>
+      <li><a href="#oneLHr">1 Light-Hour</a></li>
+      <li><a href="#oneLDay">1 Light-Day</a></li>
+      <li><a href="#oneThousandthLY">0.1% Light-Year</a></li>
+      <li><a href="#onePercLY">1% Light-Year</a></li>
+      <li><a href="#scrollEnd">Max Scroll on Browser</a></li>
+    </ul>
+  </nav>
+
+  <div id="warpControls">
+    <div id="liveData">
+      <span class="liveDataTitle">Distance from Sun: </span><span class="liveData" id="liveDistance"></span><span id="tripDistancUnits"class="warpInfoUnits"></span>
+      <!-- <span class="liveDataTitle">Current Speed: </span><span class="liveData" id="liveSpeed"></span><span id="liveSpeedUnits" class="warpInfoUnits"></span><span>/sec</span> -->
+    </div>
+  <form id="warpInputForm">
+    <label for="origin">Origin</label>
+    <select id="origin" name="Origin">
+      <option value="#stop-point">Current Location</option>
+      <optgroup label="PLANETS">
+        <option value="#sun">SUN</option>
+        <option value="#mercury">MERCURY</option>
+        <option value="#venus">VENUS</option>
+        <option value="#earth">EARTH</option>
+        <option value="#mars">MARS</option>
+        <option value="#jupiter">JUPITER</option>
+        <option value="#saturn">SATURN</option>
+        <option value="#uranus">URANUS</option>
+        <option value="#neptune">NEPTUNE</option>
+        <option value="#termination-shock">Edge of Solar System</option>
+      </optgroup>
+      <optgroup label="DWARF PLANETS">
+        <option value="#ceres">CERES</option>
+        <option value="#pluto">PLUTO</option>
+        <option value="#makemake">MAKEMAKE</option>
+        <option value="#sedna">SEDNA</option>
+        <option value="#eris">ERIS</option>
+      </optgroup>
+      <optgroup label="PROBES">
+        <option value="#new-horizons">NEW HORIZONS</option>
+        <option value="#pioneer11">PIONEER 11</option>
+        <option value="#voyager2">VOYAGER 2</option>
+        <option value="#pioneer10">PIONEER 10</option>
+        <option value="#voyager1">VOYAGER 1</option>
+      </optgroup>
+      <optgroup label="LIGHT INTERVALS">
+        <option value="#oneLSec">1 Light Second</option>
+        <option value="#oneLMin">1 Light Minute</option>
+        <option value="#oneLHr">1 Light Hour</option>
+        <option value="#oneLDay">1 Light Day</option>
+        <option value="#oneThousandthLY">0.1% Light Year</option>
+        <option value="#onePercLY">1% Light Year</option>
+      </optgroup>
+    </select>
+    <label for="warpInput">Warp Factor</label>
+    <input type="text" id="warpInput" name="Warp Factor">
+    <button id="engage" class="stop-go">ENGAGE!</button>
+    <button id="stop" class="stop-go">ALL STOP!</button>
+    <button id="reset" class="stop-go">RESET TRIP</button>
+    <label for="destination">Destination</label>
+    <select id="destination" name="Destination">
+      <option value="#scrollEnd">Forwards</option>
+      <option value="#sun">Backwards</option>
+      <optgroup label="PLANETS">
+        <option value="#sun">SUN</option>
+        <option value="#mercury">MERCURY</option>
+        <option value="#venus">VENUS</option>
+        <option value="#earth">EARTH</option>
+        <option value="#mars">MARS</option>
+        <option value="#jupiter">JUPITER</option>
+        <option value="#saturn">SATURN</option>
+        <option value="#uranus">URANUS</option>
+        <option value="#neptune">NEPTUNE</option>
+        <option value="#termination-shock">Edge of Solar System</option>
+      </optgroup>
+      <optgroup label="DWARF PLANETS">
+        <option value="#ceres">CERES</option>
+        <option value="#pluto">PLUTO</option>
+        <option value="#makemake">MAKEMAKE</option>
+        <option value="#sedna">SEDNA</option>
+        <option value="#eris">ERIS</option>
+      </optgroup>
+      <optgroup label="PROBES">
+        <option value="#new-horizons">NEW HORIZONS</option>
+        <option value="#pioneer11">PIONEER 11</option>
+        <option value="#voyager2">VOYAGER 2</option>
+        <option value="#pioneer10">PIONEER 10</option>
+        <option value="#voyager1">VOYAGER 1</option>
+      </optgroup>
+      <optgroup label="LIGHT INTERVALS">
+        <option value="#oneLSec">1 Light Second</option>
+        <option value="#oneLMin">1 Light Minute</option>
+        <option value="#oneLHr">1 Light Hour</option>
+        <option value="#oneLDay">1 Light Day</option>
+        <option value="#oneThousandthLY">0.1% Light Year</option>
+        <option value="#onePercLY">1% Light Year</option>
+      </optgroup>
+    </select>
+    <select id="starship" name="Starship">
+      <option value="none"></option>
+      <option value="nx01">Enterprise NX-01</option>
+      <option value="entA">Enterprise NCC-1701</option>
+      <option value="entD">Enterprise NCC-1701-D</option>
+      <option value="entE">Enterprise NCC-1701-E</option>
+      <option value="defiant">Defiant NX-74205</option>
+      <option value="voyager">Voyager NCC-74656</option>
+    </select>
+  </form>
+  <div id="warpInfo">
+    <select id="unitSelect" name="Select Units">
+      <option value="km">km</option>
+      <option value="mi">mi</option>
+      <option value="au">AU</option>
+      <option value="px">Pixels</option>
+      <option value="lsec">Light Seconds</option>
+      <option value="lmin">Light Minutes</option>
+    </select>
+    <span class="warpInfoTitle">Speed: </span><span class="warpInfoData" id="warpInfoSpeed"></span><span id="tripSpeedeUnits"class="warpInfoUnits"></span><span>/sec</span>
+    <span class="warpInfoTitle">Trip Distance: </span><span class="warpInfoData" id="warpInfoDistance"></span><span id="tripDistanceUnits"class="warpInfoUnits"></span>
+    <span class="warpInfoTitle">Distance Travelled: </span><span class="warpInfoData" id="warpDistanceTravelled"></span><span id="tripTravelledUnits"class="warpInfoUnits"></span>
+    <span class="warpInfoTitle">Distance Remaining: </span><span class="warpInfoData" id="warpDistanceRemaining"></span><span id="tripRemainingUnits"class="warpInfoUnits"></span>
+    <span class="warpInfoTitle">Trip Duration: </span><span class="warpInfoData" id="tripDuration"></span>
+    <span class="warpInfoTitle">Time Elapsed: </span><span class="warpInfoData" id="timeElapsed"></span>
+    <span class="warpInfoTitle">Time Remaining: </span><span class="warpInfoData" id="timeRemaining"></span>
+  </div>
+  <div id="interstellarWarpInfo">
+    <select id="interstellarObject" name="Select Interstellar Destination">
+      <option value="proxima">Proxima Centauri</option>
+      <option value="vulcan">Vulcan</option>
+      <option value="qonos">Qo'noS</option>
+      <option value="bajor">Bajor</option>
+      <option value="romulus">Romulus</option>
+      <option value="voyager">Caretaker's Array - Delta Quadrant</option>
+    </select>
+  </div>
+</div>
+    <span id="stop-point"></span>
     <div class="intro">
 
     </div>
@@ -48,14 +213,34 @@
         </div>
         <div id="mars" class="planet-wrap">
             <div class="planet"></div>
+            <div class="label">
+                    <h1 class="planet-name">MARS</h1>
+            </div>
+        </div>
+        <div id="ceres" class="planet-wrap">
+            <div class="planet dwarf-planet"></div>
+            <div class="label">
+                <h1 class="planet-name">CERES</h1>
+            </div>
         </div>
         <div id="jupiter" class="planet-wrap">
             <div class="planetary-system">
                 <div class="planet"></div>
-                <div id="io" class="planetary-moon"></div>
-                <div id="ganymede" class="planetary-moon"></div>
-                <div id="callisto" class="planetary-moon"></div>
-                <div id="europa" class="planetary-moon"></div>
+                <div id="io" class="planetary-moon">
+                  <h1 class="moon-name">IO</h1>
+                </div>
+                <div id="ganymede" class="planetary-moon">
+                  <h1 class="moon-name">GANYMEDE</h1>
+                </div>
+                <div id="callisto" class="planetary-moon">
+                  <h1 class="moon-name">CALLISTO</h1>
+                </div>
+                <div id="europa" class="planetary-moon">
+                  <h1 class="moon-name">EUROPA</h1>
+                </div>
+            </div>
+            <div class="label">
+                <h1 class="planet-name">JUPITER</h1>
             </div>
         </div>
         <div id="saturn" class="planet-wrap">
@@ -63,46 +248,167 @@
                 <div class="planet">
                     <span id="saturn-rings"></span>
                 </div>
-                <div id="titan" class="planetary-moon"></div>
+                <div id="titan" class="planetary-moon">
+                  <h1 class="moon-name">TITAN</h1>
+                </div>
+            </div>
+            <div class="label">
+                <h1 class="planet-name">SATURN</h1>
             </div>
         </div>
         <div id="uranus" class="planet-wrap">
             <div class="planetary-system">
                 <div class="planet"></div>
-                <div id="titania" class="planetary-moon"></div>
+                <div id="titania" class="planetary-moon">
+                  <h1 class="moon-name">TITANIA</h1>
+                </div>
+            </div>
+            <div class="label">
+                <h1 class="planet-name">URANUS</h1>
             </div>
         </div>
         <div id="neptune" class="planet-wrap">
             <div class="planetary-system">
                 <div class="planet"></div>
-                <div id="triton" class="planetary-moon"></div>
+                <div id="triton" class="planetary-moon">
+                  <h1 class="moon-name">TRITON</h1>
+                </div>
+            </div>
+            <div class="label">
+                <h1 class="planet-name">NEPTUNE</h1>
             </div>
         </div>
         <div id="pluto" class="planet-wrap">
             <div class="planetary-system">
-                <div class="planet"></div>
-                <div id="charon" class="planetary-moon"></div>
+                <div class="planet dwarf-planet"></div>
+                <div id="charon" class="planetary-moon">
+                  <h1 class="moon-name">CHARON</h1>
+                </div>
+            </div>
+            <div class="label">
+                <h1 class="planet-name">PLUTO</h1>
             </div>
         </div>
         <div id="new-horizons" class="planet-wrap">
             <div class="spacecraft"></div>
+            <div class="label">
+                <h1 class="planet-name">NEW HORIZONS</h1>
+            </div>
+            <div class="objectInfo">
+              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="new-horizonsDistance"></span><span id="new-horizonsDistanceUnits"class="warpInfoUnits"></span>
+            </div>
         </div>
         <div id="eris" class="planet-wrap">
-            <div class="planet"></div>
+            <div class="planet dwarf-planet"></div>
+            <div class="label">
+                <h1 class="planet-name">ERIS</h1>
+            </div>
         </div>
         <div id="sedna"class="planet-wrap">
-            <div class="planet"></div>
+            <div class="planet dwarf-planet"></div>
+            <div class="label">
+                <h1 class="planet-name">SEDNA</h1>
+            </div>
+        </div>
+        <div id="makemake"class="planet-wrap">
+            <div class="planet dwarf-planet"></div>
+            <div class="label">
+                <h1 class="planet-name">MAKEMAKE</h1>
+            </div>
         </div>
         <div id="termination-shock" class="planet-wrap">
             <div class="boundary"></div>
+            <div class="label">
+                <h1 class="planet-name">TERMINATION SHOCK</h1>
+            </div>
+        </div>
+        <div id="pioneer10" class="planet-wrap">
+            <div class="spacecraft"></div>
+            <div class="label">
+                <h1 class="planet-name">Pioneer 10</h1>
+            </div>
+            <div class="objectInfo">
+              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer10Distance"></span><span id="pioneer10DistanceUnits"class="warpInfoUnits"></span>
+            </div>
+        </div>
+        <div id="pioneer11" class="planet-wrap">
+            <div class="spacecraft"></div>
+            <div class="label">
+                <h1 class="planet-name">Pioneer 11</h1>
+            </div>
+            <div class="objectInfo">
+              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer11Distance"></span><span id="pioneer11DistanceUnits"class="warpInfoUnits"></span>
+            </div>
         </div>
         <div id="voyager1" class="planet-wrap">
             <div class="spacecraft"></div>
+            <div class="label">
+                <h1 class="planet-name">VOYAGER 1</h1>
+            </div>
+            <div class="objectInfo">
+              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager1Distance"></span><span id="voyager1DistanceUnits"class="warpInfoUnits"></span>
+            </div>
         </div>
         <div id="voyager2" class="planet-wrap">
             <div class="spacecraft"></div>
+            <div class="label">
+                <h1 class="planet-name">VOYAGER 2</h1>
+            </div>
+            <div class="objectInfo">
+              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager2Distance"></span><span id="voyager2DistanceUnits"class="warpInfoUnits"></span>
+            </div>
+        </div>
+        <div id="oneLSec" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">1 Light Second</h1>
+            </div>
+        </div>
+        <div id="oneLMin" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">1 Light Minute</h1>
+            </div>
+        </div>
+        <div id="oneLHr" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">1 Light Hour</h1>
+            </div>
+        </div>
+        <div id="oneLDay" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">1 Light Day</h1>
+            </div>
+        </div>
+        <div id="oneThousandthLY" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">0.1% of a Light Year</h1>
+            </div>
+        </div>
+        <div id="onePercLY" class="planet-wrap">
+            <div class="boundary light-interval"></div>
+            <div class="label">
+                <h1 class="planet-name">1% of a Light Year</h1>
+            </div>
+        </div>
+        <div id="scrollEnd" class="planet-wrap">
+            <div class="boundary"></div>
+            <div class="label">
+                <h1 class="planet-name">End Of Scroll</h1>
+            </div>
         </div>
     </div>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf-8" src="script.js"></script>
 </body>
 </html>

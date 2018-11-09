@@ -4,6 +4,46 @@ body {
     padding: 0;
 }
 
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.navigation ul {
+  display: flex;
+}
+
+#warpControls {
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  color: white;
+}
+
+#stop-point {
+  position: fixed;
+  left: 0;
+}
+
+/* #engage {
+  position: fixed;
+  bottom: 0;
+}
+
+#stop {
+  position: fixed;
+  bottom: 0;
+  left:100px;
+}
+
+#destination {
+  position: fixed;
+  bottom: 0;
+  left: 500px;
+} */
+
 .spacecraft, .boundary {
     height: 1px;
     width: 1px;
@@ -13,7 +53,8 @@ body {
 .planet-wrap {
     position: absolute;
     top: 40%;
-    transform: translateY(-60%);
+    transform: translateY(-60%) translateX(-100px);
+    padding-left: 100px;
 }
 
 .planet, .planetary-moon {
@@ -32,6 +73,7 @@ body {
 
 .label {
     position: absolute;
+    left: calc(50% + 49px);
     border-left: 1px solid white;
     margin-top: 10px;
 }
@@ -42,12 +84,15 @@ body {
 }
 
 .moon-name {
-    padding-bottom: 130px;
+    position: relative;
+    bottom: 93px;
+    padding-bottom: 60px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
-    font-size: 60px;
+    font-size: 23px;
     color: white;
+    border-left: 1px solid white;
 }
 
 .planet-name {
@@ -58,6 +103,7 @@ body {
     font-size: 60px;
 }
 
+/******* Planets and Moons ********/
 /* Sun */
 #sun .planet {
     height: 400px;
@@ -233,6 +279,19 @@ body {
     transform: rotate(28deg);
 }
 
+/********* Dwarf Planets **********/
+/* Ceres */
+#ceres {
+    left: 119167px;
+}
+
+#ceres .planet {
+    height: 1px;
+    width: 1px;
+    background-color: #eceef1;
+}
+
+
 /* Pluto */
 #pluto {
     left: 1700068px;
@@ -262,8 +321,6 @@ body {
     background-color: #eceef1;
 }
 
-
-
 /* Sedna */
 #sedna {
     left: 3662060px;
@@ -273,4 +330,49 @@ body {
     height: 1px;
     width: 1px;
     background-color: #e2d7d7;
+}
+
+
+/* Makemake */
+#makemake {
+  left: 1970813px
+}
+
+#makemake .planet {
+  height: 1px;
+  width: 1px;
+  background-color: #ecc6bc;
+}
+
+
+#termination-shock {
+  left: 4306030px;
+}
+
+#oneLSec {
+  left: 486px
+}
+
+#oneLMin {
+  left: 5577px;
+}
+
+#oneLHr {
+  left: 344047px
+}
+
+#oneLDay {
+  left: 7455537px;
+}
+
+#oneThousandthLY {
+  left: 2723216px;
+}
+
+#onePercLY {
+  left: 27232168px;
+}
+
+#scrollEnd {
+  left: 9999999999999999999px;
 }
