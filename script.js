@@ -1,7 +1,8 @@
 /////Global Variables/////-----------------------------------------------------------------------
 const c = 299792 //km/s in vacuum
 const kmInPx = 3474.2 //1px = 3474.2km (mean diameter of moon)
-let maxScroll = $('#scrollEnd').position() //max renderable scroll position in px
+// let maxScroll = $('#scrollEnd').position() //max renderable scroll position in px
+let maxScroll = window.scrollMaxX || (document.documentElement.scrollWidth - document.documentElement.clientWidth)
 let currentScrollPosition = document.documentElement.scrollLeft || document.body.scrollLeft
 let units = 'km' //curent unit of measurement
 
@@ -200,13 +201,14 @@ window.onload = () => {
   document.querySelector('#warpInput').value = 0
   document.querySelector('#destination').options.selectedIndex = 0
   document.querySelector('#origin').options.selectedIndex = 0
+  document.querySelector('#scrollEnd').style.left = `${(maxScroll)}px`
   // tripData()
   // liveScrollSpeed()
 }
 
 //Navigation menu event listener
-document.querySelector('.navigation').addEventListener("click", function() {
-  let theTarget = event.target
+document.querySelector('.navigation').addEventListener("click", function(e) {
+  let theTarget = e.target
   if (theTarget.getAttribute('href') !== null) {
     theTarget = theTarget.getAttribute('href')
     warpScroll(1500, theTarget, "easeInOutExpo");
@@ -217,11 +219,11 @@ document.querySelector('.navigation').addEventListener("click", function() {
   }
 })
 
-document.querySelector('#origin').addEventListener("click", function(){
-  event.target.onchange = () => {
+document.querySelector('#origin').addEventListener("click", function(e){
+  e.target.onchange = () => {
       tripData.lastLocationID = tripData.originID
       tripData.lastLocationPosPx = currentScrollPosition
-      tripData.originID = event.target.value
+      tripData.originID = e.target.value
       tripData.originLeftPosPx = elementPositionXInPx(tripData.originID)
       console.log(`origin: ${tripData.originID}`)
       warpScroll(1000, tripData.originID, "easeInOutExpo")
@@ -236,8 +238,8 @@ document.querySelector('#origin').addEventListener("click", function(){
 
 document.querySelector('#destination').addEventListener("click", function(e){
   e.target.onchange = () => {
-      let destinationID = event.target.value
-      let destinationOption = event.target.options.selectedIndex
+      let destinationID = e.target.value
+      let destinationOption = e.target.options.selectedIndex
       let status = tripData.tripStatus
       //tripDestination = event.target.value
       if (tripData.tripStatus === 'paused') {
@@ -250,7 +252,7 @@ document.querySelector('#destination').addEventListener("click", function(e){
         tripData.isTripSet = true
         calculateStaticTripData()
       } else {
-        tripData.destinationID = event.target.value
+        tripData.destinationID = e.target.value
         tripData.destinationLeftPosPx = parseFloat(elementPositionXInPx(tripData.destinationID))
         tripData.isTripSet = true
         calculateStaticTripData()
@@ -260,8 +262,8 @@ document.querySelector('#destination').addEventListener("click", function(e){
   }
 })
 
-document.querySelector('#warpInput').addEventListener('change', function(){
-  warpFactorInput = parseFloat(event.target.value)
+document.querySelector('#warpInput').addEventListener('change', function(e){
+  warpFactorInput = parseFloat(e.target.value)
   if (warpFactorInput > 10 || isNaN(warpFactorInput) || warpFactorInput < 0) {
     console.log(`Warpfactor must be 0-10`)
     document.getElementById('warpInput').value = warpFactorInput
@@ -273,7 +275,7 @@ document.querySelector('#warpInput').addEventListener('change', function(){
 
 })
 
-document.querySelector('#engage').addEventListener('click', function(){
+document.querySelector('#engage').addEventListener('click', function(e){
   tripDurationInMs = calculateScrollDuration()
   if (tripDurationInMs !== 0 && tripDurationInMs != Infinity) {
     if (tripData.isTripSet) {
@@ -289,16 +291,17 @@ document.querySelector('#engage').addEventListener('click', function(){
       tripEnd = setTimeout(setTripEnd, tripDurationInMs + 100)
     }
     warpScroll(tripDurationInMs, tripData.destinationID, "linear")
+    e.preventDefault()
     isAtWarp = true
     console.log(`trip duration: ${tripDurationInMs}`)
   } else {
     console.log(`warp factor is 0, cannot go anywhere at 0.`)
     console.log(`trip duration: ${tripDurationInMs}`)
-    event.preventDefault()
+    e.preventDefault()
   }
 })
 
-document.querySelector('#stop').addEventListener('click', function(){
+document.querySelector('#stop').addEventListener('click', function(e){
   warpScroll(0, "#stop-point", 'linear')
   isAtWarp = false
   if (tripData.isTripSet) {
@@ -306,10 +309,10 @@ document.querySelector('#stop').addEventListener('click', function(){
     clearTimeout(tripEnd)
     tripData.tripStatus = 'paused'
   }
-  event.preventDefault()
+  e.preventDefault()
 })
 
-document.querySelector('#reset').addEventListener('click', function(){
+document.querySelector('#reset').addEventListener('click', function(e){
   warpScroll(0, "#stop-point", 'linear')
   isAtWarp = false
   if (tripData.isTripSet) {
@@ -317,11 +320,11 @@ document.querySelector('#reset').addEventListener('click', function(){
     clearTimeout(tripEnd)
   }
   resetTripData()
-  event.preventDefault()
+  e.preventDefault()
 })
 
-document.querySelector('#unitSelect').addEventListener('change', function(){
-  units = event.target.value
+document.querySelector('#unitSelect').addEventListener('change', function(e){
+  units = e.target.value
   displayUnits()
   liveScrollPos()
   printStaticTripData(false)
@@ -547,7 +550,7 @@ let warpScroll = (scrollDuration, anchor, easeType) => {
   $('html, body').stop().animate({
     scrollLeft: $(anchor).offset().left
   }, scrollDuration, easeType);
-  event.preventDefault();
+  // e.preventDefault();
 }
 
 ////Trip Functions////
