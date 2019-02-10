@@ -9,10 +9,39 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .navigation ul {
   display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.planet-nav li{
+    position: relative;
+    color: white;
+}
+
+.planet-nav a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.planet-nav img {
+    width: 50px;
+}
+
+.planet-nav span {
+    position: relative;
+    display: block;
+}
+
+#sunnav img{
+    width: 100px;
 }
 
 #warpControls {
@@ -74,8 +103,16 @@ body {
 .label {
     position: absolute;
     left: calc(50% + 49px);
+    min-width: 500px;
     border-left: 1px solid white;
     margin-top: 10px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.label h1 {
+    font-weight: 300;
 }
 
 .moon-label {
@@ -90,6 +127,8 @@ body {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
     font-size: 23px;
     color: white;
     border-left: 1px solid white;
@@ -103,12 +142,30 @@ body {
     font-size: 60px;
 }
 
+.objectInfo {
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.liveObjectDataTitle {
+    font-weight: 700;
+}
+
 /******* Planets and Moons ********/
 /* Sun */
 #sun .planet {
     height: 400px;
     width: 400px;
     background-color: yellow;
+}
+
+.sun-label {
+    position: absolute;
+    top: 40%;
+    left: 46%;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+
 }
 
 /* Mercury */

@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>If the Moon Were 1 Pixel But You Have Warp Drive</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:300" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <nav class="navigation">
     <ul class="planet-nav">
-      <li><a href="#sun">SUN</a></li>
-      <li><a href="#mercury">MERCURY</a></li>
-      <li><a href="#venus">VENUS</a></li>
-      <li><a href="#earth">EARTH</a></li>
-      <li><a href="#mars">MARS</a></li>
-      <li><a href="#jupiter">JUPITER</a></li>
-      <li><a href="#saturn">SATURN</a></li>
-      <li><a href="#uranus">URANUS</a></li>
-      <li><a href="#neptune">NEPTUNE</a></li>
+      <li id="sunnav"><a href="#sun"></a><img src="images/sun2.svg"><span>SUN</span></li>
+      <li><a href="#mercury"></a><img src="images/mercury3.svg"><span>MERCURY</span></li>
+      <li><a href="#venus"></a><img src="images/venus.svg"><span>VENUS</span></li>
+      <li><a href="#earth"></a><img src="images/earth.svg"><span>EARTH</span></li>
+      <li><a href="#mars"></a><img src="images/mars.svg"><span>MARS</span></li>
+      <li><a href="#jupiter"></a><img src="images/jupiter.svg"><span>JUPITER</span></li>
+      <li><a href="#saturn"></a><img src="images/saturn2.svg"><span>SATURN</span></li>
+      <li><a href="#uranus"></a><img src="images/uranus.svg"><span>URANUS</span></li>
+      <li><a href="#neptune"></a><img src="images/neptune.svg"><span>NEPTUNE</span></li>
       <li><a href="#termination-shock">TERMINATION SHOCK</a></li>
     </ul>
     <ul class="dwarf-nav">
@@ -195,26 +196,26 @@
         <div id="venus" class="planet-wrap">
             <div class="planet"></div>
             <div class="label">
-                    <h1 class="planet-name">VENUS</h1>
+                <h1 class="planet-name">VENUS</h1>
             </div>
         </div>
         <div id="earth" class="planet-wrap">
             <div class="planetary-system">
                 <div class="planet"></div>
                 <div id="the-moon" class="planetary-moon">
-                        <div class="moon-label">
-                                <h1 class="moon-name">THE MOON</h1>
-                        </div>
+                    <div class="moon-label">
+                        <h1 class="moon-name">THE MOON</h1>
+                    </div>
                 </div>
             </div>
             <div class="label">
-                    <h1 class="planet-name">EARTH</h1>
+                <h1 class="planet-name">EARTH</h1>
             </div>
         </div>
         <div id="mars" class="planet-wrap">
             <div class="planet"></div>
             <div class="label">
-                    <h1 class="planet-name">MARS</h1>
+                <h1 class="planet-name">MARS</h1>
             </div>
         </div>
         <div id="ceres" class="planet-wrap">
@@ -227,16 +228,16 @@
             <div class="planetary-system">
                 <div class="planet"></div>
                 <div id="io" class="planetary-moon">
-                  <h1 class="moon-name">IO</h1>
+                    <h1 class="moon-name">IO</h1>
                 </div>
                 <div id="ganymede" class="planetary-moon">
-                  <h1 class="moon-name">GANYMEDE</h1>
+                    <h1 class="moon-name">GANYMEDE</h1>
                 </div>
                 <div id="callisto" class="planetary-moon">
-                  <h1 class="moon-name">CALLISTO</h1>
+                    <h1 class="moon-name">CALLISTO</h1>
                 </div>
                 <div id="europa" class="planetary-moon">
-                  <h1 class="moon-name">EUROPA</h1>
+                    <h1 class="moon-name">EUROPA</h1>
                 </div>
             </div>
             <div class="label">
@@ -249,7 +250,7 @@
                     <span id="saturn-rings"></span>
                 </div>
                 <div id="titan" class="planetary-moon">
-                  <h1 class="moon-name">TITAN</h1>
+                    <h1 class="moon-name">TITAN</h1>
                 </div>
             </div>
             <div class="label">
@@ -260,7 +261,7 @@
             <div class="planetary-system">
                 <div class="planet"></div>
                 <div id="titania" class="planetary-moon">
-                  <h1 class="moon-name">TITANIA</h1>
+                    <h1 class="moon-name">TITANIA</h1>
                 </div>
             </div>
             <div class="label">
@@ -271,7 +272,7 @@
             <div class="planetary-system">
                 <div class="planet"></div>
                 <div id="triton" class="planetary-moon">
-                  <h1 class="moon-name">TRITON</h1>
+                    <h1 class="moon-name">TRITON</h1>
                 </div>
             </div>
             <div class="label">
@@ -282,7 +283,7 @@
             <div class="planetary-system">
                 <div class="planet dwarf-planet"></div>
                 <div id="charon" class="planetary-moon">
-                  <h1 class="moon-name">CHARON</h1>
+                    <h1 class="moon-name">CHARON</h1>
                 </div>
             </div>
             <div class="label">
@@ -293,9 +294,9 @@
             <div class="spacecraft"></div>
             <div class="label">
                 <h1 class="planet-name">NEW HORIZONS</h1>
-            </div>
-            <div class="objectInfo">
-              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="new-horizonsDistance"></span><span id="new-horizonsDistanceUnits"class="warpInfoUnits"></span>
+                <div class="objectInfo">
+                    <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="new-horizonsDistance"></span><span id="new-horizonsDistanceUnits"class="warpInfoUnits"></span>
+                </div>
             </div>
         </div>
         <div id="eris" class="planet-wrap">
@@ -326,36 +327,37 @@
             <div class="spacecraft"></div>
             <div class="label">
                 <h1 class="planet-name">Pioneer 10</h1>
+                <div class="objectInfo">
+                    <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer10Distance"></span><span id="pioneer10DistanceUnits"class="warpInfoUnits"></span>
+                </div>
             </div>
-            <div class="objectInfo">
-              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer10Distance"></span><span id="pioneer10DistanceUnits"class="warpInfoUnits"></span>
-            </div>
+
         </div>
         <div id="pioneer11" class="planet-wrap">
             <div class="spacecraft"></div>
             <div class="label">
                 <h1 class="planet-name">Pioneer 11</h1>
-            </div>
-            <div class="objectInfo">
-              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer11Distance"></span><span id="pioneer11DistanceUnits"class="warpInfoUnits"></span>
+                <div class="objectInfo">
+                    <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="pioneer11Distance"></span><span id="pioneer11DistanceUnits"class="warpInfoUnits"></span>
+                </div>
             </div>
         </div>
         <div id="voyager1" class="planet-wrap">
             <div class="spacecraft"></div>
             <div class="label">
                 <h1 class="planet-name">VOYAGER 1</h1>
-            </div>
-            <div class="objectInfo">
-              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager1Distance"></span><span id="voyager1DistanceUnits"class="warpInfoUnits"></span>
+                <div class="objectInfo">
+                    <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager1Distance"></span><span id="voyager1DistanceUnits"class="warpInfoUnits"></span>
+                </div>
             </div>
         </div>
         <div id="voyager2" class="planet-wrap">
             <div class="spacecraft"></div>
             <div class="label">
                 <h1 class="planet-name">VOYAGER 2</h1>
-            </div>
-            <div class="objectInfo">
-              <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager2Distance"></span><span id="voyager2DistanceUnits"class="warpInfoUnits"></span>
+                <div class="objectInfo">
+                    <span class="liveObjectDataTitle">Current Distance from Sun: </span><span class="liveObjectData" id="voyager2Distance"></span><span id="voyager2DistanceUnits"class="warpInfoUnits"></span>
+                </div>
             </div>
         </div>
         <div id="oneLSec" class="planet-wrap">
