@@ -14,13 +14,14 @@ body {
 
 .navigation ul {
   display: flex;
-  justify-content: space-between;
   list-style-type: none;
 }
 
 .planet-nav li{
     position: relative;
     color: white;
+    margin-right: 15px;
+    padding-top: 25px;
 }
 
 .planet-nav a {
@@ -32,17 +33,114 @@ body {
 }
 
 .planet-nav img {
-    width: 50px;
+    width: 40px;
 }
 
 .planet-nav span {
-    position: relative;
-    display: block;
+    position: absolute;
+    display: none;
+    transform: rotate(45deg);
+    width: 200px;
+    transform-origin: top left;
+    left: 50%;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.planet-nav li:hover span,
+.planet-nav li:focus span {
+    /* display: block;
+    opacity: 1;
+    transition: 0.2s; */
+}
+
+.planet-nav li.nav-dwarf-planet {
+    padding-top: 35px;
+}
+
+.nav-dwarf-planet img {
+    width: 20px;
+}
+
+#sunnav {
+    padding-top: 0;
 }
 
 #sunnav img{
     width: 100px;
 }
+
+#saturnnav {
+    padding-top: 20px;
+}
+
+#saturnnav img {
+    width: 90px;
+}
+
+#uranusnav {
+    padding-top: 8px;
+}
+
+#uranusnav img {
+    width: 43px;
+}
+
+#neptunenav {
+    padding-top: 23px;
+}
+
+#neptunenav img {
+    width: 72px;
+}
+
+#terminationshocknav {
+    padding-top: 0px;
+}
+
+#terminationshocknav img {
+    height: 100px;
+}
+
+#nav-new-horizons {
+    padding-top: 20px;
+}
+
+#nav-new-horizons img {
+    height: 40px;
+}
+
+#nav-voyager1,
+#nav-voyager2 {
+    padding-top: 7px;
+}
+
+#nav-voyager1 img,
+#nav-voyager2 img{
+    height: 91px;
+}
+
+#nav-pioneer10,
+#nav-pioneer11 {
+    padding-top: 12px;
+}
+
+#nav-pioneer10 img,
+#nav-pioneer11 img{
+    height: 85px;
+}
+
+.planet-nav li.nav-light {
+    padding-top: 34px;
+    padding-right: 15px;
+    margin-right: 0;
+}
+
+.nav-light img {
+    width: 10px;
+}
+
+
 
 #warpControls {
   position: fixed;
@@ -411,7 +509,7 @@ body {
 }
 
 #oneLMin {
-  left: 5577px;
+  left: 5177.5px;
 }
 
 #oneLHr {

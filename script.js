@@ -1,20 +1,20 @@
 /////Global Variables/////-----------------------------------------------------------------------
-const c = 299792 //km/s in vacuum
-const kmInPx = 3474.2 //1px = 3474.2km (mean diameter of moon)
+const c = 299792; //km/s in vacuum
+const kmInPx = 3474.2; //1px = 3474.2km (mean diameter of moon)
 // let maxScroll = $('#scrollEnd').position() //max renderable scroll position in px
-let maxScroll = window.scrollMaxX || (document.documentElement.scrollWidth - document.documentElement.clientWidth)
-let currentScrollPosition = document.documentElement.scrollLeft || document.body.scrollLeft
-let units = 'km' //curent unit of measurement
+let maxScroll = window.scrollMaxX || (document.documentElement.scrollWidth - document.documentElement.clientWidth);
+let currentScrollPosition = document.documentElement.scrollLeft || document.body.scrollLeft;
+let units = 'km'; //curent unit of measurement
 
 //static trip data
-let tripOrigin = '#sun' //trip origin id
-let tripDestination = '#scrollEnd' //current trip destination id
-let warpFactorInput = 0
-let tripDurationInMs = 0 //current trip duration
-let tripDistanceInPx = 0 //current trip distance between origin and destination in px
-let isAtWarp = false
-let liveTripData
-let tripEnd
+let tripOrigin = '#sun'; //trip origin id
+let tripDestination = '#scrollEnd'; //current trip destination id
+let warpFactorInput = 0;
+let tripDurationInMs = 0; //current trip duration
+let tripDistanceInPx = 0; //current trip distance between origin and destination in px
+let isAtWarp = false;
+let liveTripData;
+let tripEnd;
 
 /////Objects/////--------------------------------------------------------------------------------
 //unit ratios, base unit is 1km
@@ -64,28 +64,28 @@ const defaultTrip = {
 const probes = [
   {
     name: 'voyager1',
-    speed: 17,
-    referenceDate: new Date(2018, 6, 8, 17, 26, 00, 00),
-    referenceDistance: 21330068000
+    speed: 16.91963841,
+    referenceDate: new Date(Date.UTC(2018, 6, 9, 00, 26, 00, 00)),
+    referenceDistance: 21330067950
   }, {
     name: 'voyager2',
-    speed: 15.4,
-    referenceDate: new Date(2018, 6, 8, 17, 28, 00, 00),
+    speed: 15.03537594,
+    referenceDate: new Date(Date.UTC(2018, 6, 9, 00, 28, 00, 00)),
     referenceDistance: 17649401340
   }, {
     name: 'new-horizons',
-    speed: 14.1,
-    referenceDate: new Date(2018, 6, 8, 14, 50, 00, 00),
-    referenceDistance: 6260518000
+    speed: 14.01247198,
+    referenceDate: new Date(Date.UTC(2018, 6, 8, 21, 50, 00, 00)),
+    referenceDistance: 6260517300
   }, {
     name: 'pioneer10',
-    speed: 11.9,
-    referenceDate: new Date(2018, 8, 26, 22, 53, 00, 00),
+    speed: 11.90333925,
+    referenceDate: new Date(Date.UTC(2018, 8, 27, 05, 53, 00, 00)),
     referenceDistance: 18230009300
   }, {
     name: 'pioneer11',
-    speed: 11.3,
-    referenceDate: new Date(2018, 8, 26, 22, 54, 00, 00),
+    speed: 11.15347469,
+    referenceDate: new Date(Date.UTC(2018, 8, 27, 05, 54, 00, 00)),
     referenceDistance: 14840177100
   }
 ]
@@ -352,7 +352,11 @@ const liveScrollPos = () => document.querySelector('#liveDistance').innerHTML = 
  * @param probeRefDate        {Date}    Date object of when the probe object was originally created. 
  * @return {Number} Current distance from the Sun in km.
  */
-const currentProbeLocation = (probeSpeed, probeRefDistance, probeRefDate) => (probeRefDistance + probeSpeed * ((new Date() - probeRefDate) / 1000))
+const currentProbeLocation = (probeSpeed, probeRefDistance, probeRefDate) => {
+  let today = new Date();
+  let todayUTC = new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), today.getUTCHours(), today.getUTCMinutes(), today.getUTCSeconds(), today.getUTCMilliseconds());
+  return (probeRefDistance + probeSpeed * ((new Date() - probeRefDate) / 1000));
+}
 
 /**
  * Updates probe positions and prints to live position counter in DOM every 100ms.
