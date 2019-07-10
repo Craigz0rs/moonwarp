@@ -143,10 +143,19 @@ body {
 
 
 #warpControls {
+  display: flex;
+  flex-wrap: wrap;
   position: fixed;
   bottom: 0;
   left: 0px;
   color: white;
+  font-family: 'Exo 2', sans-serif;
+}
+
+#liveData {
+    width: 100%;
+    padding-left: 40px;
+
 }
 
 #stop-point {
@@ -230,6 +239,7 @@ body {
     font-size: 23px;
     color: white;
     border-left: 1px solid white;
+    
 }
 
 .planet-name {
@@ -247,6 +257,14 @@ body {
 
 .liveObjectDataTitle {
     font-weight: 700;
+}
+
+#starship {
+    display: none;
+}
+
+#interstellarWarpInfo {
+    display: none;
 }
 
 /******* Planets and Moons ********/
