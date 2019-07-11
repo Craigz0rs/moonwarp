@@ -4,12 +4,39 @@ body {
     padding: 0;
 }
 
+.intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120vw;
+    font-family: 'Exo 2', sans-serif;
+    z-index: 1;
+}
+
+.intro__wrapper {
+    max-width: 53rem;
+    color: white;
+    margin-left: 10rem;
+    margin-top: 10rem;
+}
+
+.intro__heading {
+    text-transform: uppercase;
+}
+
+.space {
+    position: absolute;
+    top: 0;
+    left: 120vw;
+}
+
 .navigation {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   font-family: 'Exo 2', sans-serif;
+  z-index: 99;
 }
 
 .navigation ul {
